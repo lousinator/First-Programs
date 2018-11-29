@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Just a Test</title>
+
+<style>
+
+//Css styles for cosmetics.
+
+* {
+text-align: center;
+font-weight: bold;
+}
+
+h1 {
+color: #070;
+background-image: linear-gradient(420deg, #f00, #5b5, #00f);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+opacity: 1;
+}
+
+h2 {
+  color: #b0b;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  border: 3px solid blue;
+
+}
+
+td {
+  border: 1px solid #000;
+  height: 20px;
+  width: 20px;
+  margin: 0px;
+  }
+
+input[type=number] {
+  width: 5%;
+  text-align: left;
+}
+
+.classy {
+  background-image: linear-gradient(420deg, #ffee88, #bfb, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
+  }
+
+html {
+  height: 100%;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-image: radial-gradient(ellipse at bottom center, white 30%, red, orange, yellow, green, blue, indigo, violet, white, white);
+
+  }
+
+  .shadow-box {
+    border: 5px solid #ff0;
+    border-radius: 10px;
+    background: #fff;
+    opacity: .7;
+    padding: 5px;
+  }
+
+</style>
+
+<script type="text/javascript">
+
+
+
+function tableTest() {
+  var myTable = document.getElementById('mesa');
+
+console.log("tableTest is running!");
+
+var oldCell = document.getElementsByTagName("td");
+var tRow = document.getElementsByTagName("tr");
+
+console.log("first part is running okay");
+if (tRow.length > 0) {
+var y = tRow.length;
+for (x = 0; y > x; x++) {
+
+myTable.removeChild(myTable.lastChild);
+
+}
+
+}
+
+
+makeRows();
+}
+
+function makeRows() {
+  var myTable = document.getElementById('mesa');
+  var gridHeight = document.getElementById("heightNumber").value;
+  var gridWidth = document.getElementById("widthNumber").value;
+
+for (x = 0; x < gridHeight; x++) {
+  var newRow = document.createElement("tr");
+    myTable.appendChild(newRow);
+
+for (y = 0; y < gridWidth; y++) {
+  var newCell = document.createElement("td");
+    newRow.appendChild(newCell);
+    newCell.addEventListener("click", newColor, false);
+    newCell.addEventListener("contextmenu", function(e) {e.preventDefault();}, false);
+    newCell.addEventListener("contextmenu", newColor, false);
+} }
+}
+
+var newColor = function paintMe(event) {
+var color = document.getElementById("pickColor").value;
+if (event.which === 1) {
+
+this.style.backgroundColor = color;
+console.log(event);
+}
+
+if (event.which === 3) {
+
+  this.style.backgroundColor = "#FFF";
+}
+
+}
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Pixel Art Maker</h1>
+
+Grid Height:
+<input type="number" value="3" id="heightNumber" class="shadow-box">
+Grid Width:
+<input type="number" value="3" id="widthNumber" class="shadow-box">
+
+<input type="button" id="clickMe" value="Print Canvas" onClick="tableTest()" class="classy">
+<p>
+<input type="color" id="pickColor" value="#008800">
+</p>
+<h4>Canvas Appears Below</h4>
+
+
+<table id="mesa"> </table>
+
+
+</body>
+
+</html>
