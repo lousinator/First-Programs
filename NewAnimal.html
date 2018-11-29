@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New Animal</title>
+
+<style>
+
+* {
+box-sizing: border-box;
+}
+
+.card {
+border: 3px solid #0ab;
+border-radius: 5px;
+height: auto;
+width: 350px;
+margin: auto;
+background: repeating-radial-gradient(ellipse, #0ab, #890);
+padding: 3px;
+}
+
+.image {
+height: 100%;
+width: 100%;
+border-radius: 10px;
+margin-bottom: 3px;
+}
+
+h1 {
+height: 20px;
+text-align: center;
+margin-top: 0px;
+}
+
+.shadow-box {
+border: 3px solid #fff;
+border-radius: 8px;
+opacity: 0.5;
+background: #fff;
+height: 100%;
+margin-bottom: 5px;
+}
+
+.highlight {
+background: #ab0;
+border: 2px;
+border-radius: 8px;
+padding: 1px;
+opacity: 0.5;
+}
+
+  </style>
+
+<body>
+
+<div class="card">
+
+<h1 class="shadow-box">New Animal</h1>
+
+<img src="Images/box-turtle-1389243_640.jpg" class="image">
+<span class="highlight">
+This is the text that goes inside of the box. Most of it isn't very informative.
+Nevertheless, I think it's important to note that even though this text doesn't inform you of anything, it still takes up a lot of space in the card.
+</span>
+
+<p></p>
+
+<div class="shadow-box">
+This box was added and also might increase the height of my box.
+  </div>
+    <div class="shadow-box">
+    But. Alas, it did not.
+    It looks like I should remove the height paramater from my css class since I now have text and elements included to organically create my height for me instead of relying on a set height parameter to create a 'boxlike' shape.
+  </div>
+
+  </body>
+  </html>
