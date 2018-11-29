@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Color Picker</title>
+
+<style>
+
+* {
+text-align: center;
+font-weight: bold;
+}
+
+h1 {
+color: #070;
+}
+
+h2 {
+  color: #b0b;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+function pixelMaker() {
+  console.log("PixelMaker is running");
+//prints "PixelMaker is running".
+}
+
+
+
+
+
+</script>
+
+</head>
+<body>
+  <h1>
+    Pixel Art Maker
+  </h1>
+<h2>
+  Choose Grid Size
+</h2>
+
+<form id="sizePicker">
+Grid Height:
+  <input type="number" id="heightNumber" value="3">
+Grid Width:
+  <input type="number" id="widthNumber" value="3">
+
+  <input type="button" id="makeCanvas" value="Activate!" onClick="pixelMaker()">
+</form>
+
+
+
+<h3>
+  Pick a Color
+</h3>
+
+<input type="color" id="pickColor" value="#008800">
+
+<div>
+Canvas Appears Below
+</div>
+
+<table id="canvas"> </table>
+</body>
+
+</html>
